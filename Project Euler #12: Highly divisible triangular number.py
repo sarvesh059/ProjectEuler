@@ -26,7 +26,7 @@ def calcMinDividers():
             curDiv *= 2
 
         answers[s] = curDiv
-        # divisors of d(N(N+1)/2)= d(N/2)*d(N+1) if N is even else d((N+1)/2)*d(N/2)
+        # divisors of d(N(N+1)/2)= d(N/2)*d(N+1) if N is even else d((N+1)/2)*d(N)
         # Here s = N + 1
         if s % 2 == 0:
             curDiv = answers[s // 2]  * answers[s - 1]
