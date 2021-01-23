@@ -1,3 +1,4 @@
+# DP approch
 for _ in range(int(input())):
     n = int(input())
     s = []
@@ -10,3 +11,15 @@ for _ in range(int(input())):
             s[row][i] += max(s[row+1][i], s[row+1][i+1])
         row -= 1
     print(s[0][0])
+    
+# recursive approch
+def func(arr,k=0,i=0):
+    if k >=len(arr):
+        return 0
+    return arr[k][i] + max(func(arr,k+1,i+1),func(arr,k+1,i))
+        
+
+for _ in range(int(input())):
+    n = int(input())
+    arr = [list(map(int,input().split(' '))) for i in range(n)]
+    print(func(arr))
